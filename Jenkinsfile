@@ -1,16 +1,8 @@
 pipeline {
  agent any 
 
-	
 	stages {
-		stage ('Checkout') {
-			steps {
-			git branch : 'master' , url: 'https://github.com/psivaramps/gcsbucket.git'
-
-			}
-		}
-
-		
+				
 		stage ('Creating a Bucket') {
 			steps {
 			sh 'gsutil mb -p sivaramgcp -c nearline -l us-eas1 -b on g://pipelinebucket'
