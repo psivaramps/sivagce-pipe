@@ -32,7 +32,7 @@ pipeline {
 			}
 		}
 		
-		stage ('To List the Objects in Bucket') {
+		stage ('To copy the Objects in Bucket') {
 			steps {
 			sh 'gsutil cp  gs://siva-simple-bucket/dsktp.jpg  gs://pipelinebucket/dsktp1.jp'
 			}
