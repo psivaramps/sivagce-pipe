@@ -5,36 +5,36 @@ pipeline {
 				
 		stage ('Creating a Bucket') {
 			steps {
-			sh 'gsutil mb -p sivaramgcp -c nearline -l us-eas1 -b on g://pipelinebucket'
+			bat 'gsutil mb -p sivaramgcp -c nearline -l us-eas1 -b on g://pipelinebucket'
 			
 			}
 		}
 
 		stage ('list the buckets') {
 			steps {
-			sh 'gsutil ls'
+			bat 'gsutil ls'
 			}
 		}
 		stage ('To Display the size of bucket') {
 			steps {
-			sh 'gsutil du -s gs://pipelinebucket'
+			bat 'gsutil du -s gs://pipelinebucket'
 			}
 		}
 		
 		stage ('To Display Bucket Metadata') {
 			steps {
-			sh 'gsutil ls -L -b gs://pipelinebucket'
+			bat 'gsutil ls -L -b gs://pipelinebucket'
 			}
 		}
 		stage ('To List the Objects in Bucket') {
 			steps {
-			sh 'gsutil ls -r gs://pipelinebucket'
+			bat 'gsutil ls -r gs://pipelinebucket'
 			}
 		}
 		
 		stage ('To copy the Objects in Bucket') {
 			steps {
-			sh 'gsutil cp  gs://siva-simple-bucket/dsktp.jpg  gs://pipelinebucket/dsktp1.jp'
+			bat 'gsutil cp  gs://siva-simple-bucket/dsktp.jpg  gs://pipelinebucket/dsktp1.jp'
 			}
 		}
 	
