@@ -5,7 +5,7 @@ pipeline {
 				
 		stage ('Creating a Bucket') {
 			steps {
-			bat 'gsutil mb -p sivaramgcp -c nearline -l us-eas1 -b on g://pipelinebucket'
+			bat 'gsutil mb -p sivaramgcp -c nearline -l us-east1 -b on gs://pipelinebucket'
 			
 			}
 		}
