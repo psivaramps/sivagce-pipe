@@ -7,7 +7,7 @@ pipeline {
 		 	steps { 
 			sh 'gcloud config set account gcp-sivaram'
 			
-			sh 'gcloud auth activate-service-account gcs-storage-sivaram@gcp-sivaram.iam.gserviceaccount.com --key-file=/var/lib/jenkins/workspace/new-gcs-bucket/gcp-sivaram-125f1bd41300.json --project=gcp-sivaram'
+			sh 'gcloud auth activate-service-account gcpsivaram@gcp-sivaram.iam.gserviceaccount.com --key-file=/var/lib/jenkins/workspace/new-gcs-bucket/gcp-sivaram-f75dd4b3f349.json --project=gcp-sivaram'
 			}
 		}
 				
