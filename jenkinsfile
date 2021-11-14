@@ -5,7 +5,7 @@ pipeline {
 	
 		stage ('Credential') {
 		 	steps { 
-			sh 'gcloud auth list'
+			sh 'gcloud config set account gcp-sivaram'
 			}
 		}
 				
