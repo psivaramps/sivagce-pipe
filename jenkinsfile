@@ -6,7 +6,7 @@ pipeline {
 		stage ('Credential-gcp') {
 		 	steps { 
 			sh 'gcloud config set account gcp-sivaram'
-			sh ' cd ~/Practise/gcs-key'
+			sh ' cd Home/Practise/gcs-key'
 			sh 'gcloud auth activate-service-account gcs-storage-sivaram@gcp-sivaram.iam.gserviceaccount.com --key-file=~/Practise/gcs-key/gcp-sivaram-125f1bd41300.json --project=gcp-sivaram'
 			}
 		}
