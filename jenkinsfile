@@ -13,7 +13,7 @@ pipeline {
 				
 		stage ('Creating a Bucket') {
 			steps {
-			sh 'gsutil mb -p sivaramgcp -c nearline -l us-east1 -b on gs://pipelinebucket'
+			sh 'gsutil mb -p gcp-sivaram -c nearline -l us-east1 -b on gs://pipelinebucket'
 			
 			}
 		}
