@@ -6,7 +6,7 @@ pipeline {
 		stage ('Credential-gcp') {
 		 	steps { 
 			sh 'gcloud config set account gcp-sivaram'
-			sh 'gcloud auth activate-service-account service-54611516173@gs-project-accounts.iam.gserviceaccount.com'
+			sh 'gcloud auth activate-service-account gcs-storage-sivaram@gcp-sivaram.iam.gserviceaccount.com --key-file=gcp-sivaram-125f1bd41300.json --project=gcp-sivaram'
 			}
 		}
 				
