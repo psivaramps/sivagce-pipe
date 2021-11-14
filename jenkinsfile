@@ -3,7 +3,7 @@ pipeline {
 
 	stages {
 	
-		stage ('Credential') {
+		stage ('Credential-gcp') {
 		 	steps { 
 			sh 'gcloud config set account gcp-sivaram'
 			}
