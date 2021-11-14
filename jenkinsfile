@@ -2,6 +2,12 @@ pipeline {
  agent any 
 
 	stages {
+	
+		stage ('Credential') {
+		 	steps { 
+			sh 'gcloud config set account `gcp-sivaram`
+			}
+		}
 				
 		stage ('Creating a Bucket') {
 			steps {
