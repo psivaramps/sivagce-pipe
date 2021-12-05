@@ -7,13 +7,13 @@ pipeline {
 		 	steps { 
 			sh 'gcloud config set account gcp-sivaram'
 			
-			sh 'gcloud auth activate-service-account gcpsivaram@gcp-sivaram.iam.gserviceaccount.com --key-file=/var/lib/jenkins/workspace/new-gcs-bucket/gcp-sivaram-f75dd4b3f349.json --project=gcp-sivaram'
+			sh 'gcloud auth activate-service-account gcpsivaram@gcp-sivaram.iam.gserviceaccount.com --key-file=/var/lib/jenkins/workspace/new-gcs-bucket/gcp-sivaram-ef394574369b.json --project=gcp-sivaram'
 			}
 		}
 				
 		stage ('Creating a Bucket') {
 			steps {
-			sh 'gsutil mb -p gcp-sivaram -c nearline -l us-east1 -b on gs://siva-pipeline-bucket'
+			sh 'gsutil mb -p gcp-sivaram -c nearline -l us-east1 -b on gs://siva-pipeline-bucket-1'
 			
 			}
 		}
@@ -25,26 +25,26 @@ pipeline {
 		}
 		stage ('To Display the size of bucket') {
 			steps {
-			sh 'gsutil du -s gs://siva-pipeline-bucket'
+			sh 'gsutil du -s gs://siva-pipeline-bucket-1'
 			}
 		}
 		
 		stage ('To Display Bucket Metadata') {
 			steps {
-			sh 'gsutil ls -L -b gs://siva-pipeline-bucket'
+			sh 'gsutil ls -L -b gs://siva-pipeline-bucket-1'
 			}
 		}
 		stage ('To List the Objects in Bucket') {
 			steps {
-			sh 'gsutil ls -r gs://siva-pipeline-bucket'
+			sh 'gsutil ls -r gs://siva-pipeline-bucket-1'
 			}
 		}
 		
-		stage ('To copy the Objects in Bucket') {
-			steps {
-			sh 'gsutil cp  gs://siva-simple-bucket/dsktp.jpg  gs://siva-pipeline-bucket/dsktp1.jp'
-			}
-		}
+		//stage ('To copy the Objects in Bucket') {
+		//	steps {
+		//	sh 'gsutil cp  gs://siva-simple-bucket/dsktp.jpg  gs://siva-pipeline-bucket/dsktp1.jp'
+		//	}
+		// }
 	
 	}
 	}
