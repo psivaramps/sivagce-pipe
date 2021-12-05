@@ -14,7 +14,7 @@ pipeline {
 				
 		stage ('Creating a Bucket') {
 			steps {
-			sh 'gsutil mb -p gcp-sivaram -c nearline -l us-east1 -b on gs://siva-pipeline-bucket-1'
+			sh 'gsutil mb -p gcp-sivaram -c nearline -l us-east1 -b on gs://siva-pipeline-bucket-2'
 			
 			}
 		}
@@ -26,18 +26,18 @@ pipeline {
 		}
 		stage ('To Display the size of bucket') {
 			steps {
-			sh 'gsutil du -s gs://siva-pipeline-bucket-1'
+			sh 'gsutil du -s gs://siva-pipeline-bucket-2'
 			}
 		}
 		
 		stage ('To Display Bucket Metadata') {
 			steps {
-			sh 'gsutil ls -L -b gs://siva-pipeline-bucket-1'
+			sh 'gsutil ls -L -b gs://siva-pipeline-bucket-2'
 			}
 		}
 		stage ('To List the Objects in Bucket') {
 			steps {
-			sh 'gsutil ls -r gs://siva-pipeline-bucket-1'
+			sh 'gsutil ls -r gs://siva-pipeline-bucket-2'
 			}
 		}
 		
